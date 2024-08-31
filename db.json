@@ -36,5 +36,19 @@
       "image": "",
       "price": 1400
     }
+  ],
+  "basket": [
+    {
+      "id": 1,
+      "name": "Поводок",
+      "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      "price": 1000
+    },
+    {
+      "id": 2,
+      "name": "Часы",
+      "image": "images/chasy.jpg",
+      "price": 5100
+    }
   ]
 }

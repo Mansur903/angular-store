@@ -1,1 +1,20 @@
-<p>basket works!</p>
+<div class="cards">
+  <mat-card class="card" appearance="outlined" *ngFor="let item of basket">
+    <mat-card-header class="card__header">
+      <mat-card-title class="card__title">{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <img class="card__image" mat-card-image [src]="item.image ? item.image : 'images/noimage.jpg'" alt="photo of item">
+    <div class="card__content">
+      <mat-card-actions class="card__actions">
+        <button mat-button class="card__button" type="button">-</button>
+        <button mat-button class="card__button" type="button">+</button>
+      </mat-card-actions>
+    </div>
+    <span class="card__price">
+       Общ. стоимость: ₽{{item.price}}
+    </span>
+    <span class="card__quantity">
+       Кол-во: 2
+    </span>
+  </mat-card>
+</div>

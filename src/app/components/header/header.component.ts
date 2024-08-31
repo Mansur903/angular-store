@@ -16,4 +16,7 @@ import {RouterLink} from "@angular/router";
 })
 export class HeaderComponent {
 
+  log() {
+    console.log(111)
+  }
 }

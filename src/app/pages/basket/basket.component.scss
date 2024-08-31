@@ -1,0 +1,33 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px
+}
+
+.card {
+  width: 200px;
+  margin: 20px 10px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__image {
+    padding: 10px;
+    border-radius: 25px;
+    height: 170px;
+    object-fit: contain;
+  }
+
+  &__price {
+    font-size: 12px;
+    margin: 0 auto;
+  }
+
+  &__quantity {
+    font-size: 12px;
+    margin: 0 auto;
+  }
+}
