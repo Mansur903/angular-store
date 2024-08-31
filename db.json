@@ -1,1 +1,40 @@
-{}
+{
+  "store": [
+    {
+      "id": 1,
+      "name": "Поводок",
+      "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      "price": 1000
+    },
+    {
+      "id": 2,
+      "name": "Часы",
+      "image": "images/chasy.jpg",
+      "price": 5100
+    },
+    {
+      "id": 3,
+      "name": "Кроссовки",
+      "image": "images/krossovki.jpg",
+      "price": 3200
+    },
+    {
+      "id": 4,
+      "name": "Куртка",
+      "image": "images/kurtka.jpg",
+      "price": 6000
+    },
+    {
+      "id": 5,
+      "name": "Телефон",
+      "image": "images/telefon.jpg",
+      "price": 22000
+    },
+    {
+      "id": 6,
+      "name": "Зонт",
+      "image": "",
+      "price": 1400
+    }
+  ]
+}
