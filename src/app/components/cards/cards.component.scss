@@ -1,0 +1,16 @@
+.card {
+  max-width: 220px;
+  margin: 20px 20px 20px 0;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 20px;
+  }
+
+  &__image {
+    padding: 10px;
+    border-radius: 25px;
+  }
+}
+

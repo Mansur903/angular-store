@@ -1,0 +1,32 @@
+.header {
+  background-color: #1987D6;
+  color: #f0f0f0;
+
+  &__content-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 900px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  &__title:hover {
+    cursor: pointer;
+  }
+
+  &__link {
+    cursor: pointer;
+    padding: 0 14px;
+    &:first-child {
+      padding: 0;
+    }
+  }
+}
