@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
-import {IStoreItem} from "../../models/store";
-import {Subscription} from "rxjs";
 import {StoreService} from "../../services/store.service";
 import {CommonModule} from "@angular/common";
 
@@ -25,7 +23,6 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.storeService.getBasket().subscribe((data) => {
-      console.log('basketLength: ', data.length)
       this.basketLength = data.length
     })
 

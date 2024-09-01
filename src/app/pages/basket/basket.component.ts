@@ -20,12 +20,14 @@ export class BasketComponent implements OnInit {
   basket: IStoreItem[] = []
   basketSubscription: Subscription = new Subscription()
   basketLengthSubscription: Subscription = new Subscription()
+  totalCost: number = 0
 
   constructor(private storeService: StoreService) {}
 
   ngOnInit(): void {
     this.basketSubscription = this.storeService.getBasket().subscribe((data: IStoreItem[]) => {
       this.basket = data
+      this.countTotalCost(data)
     })
 
     this.storeService.basket$.subscribe((data) => this.basket = data)
@@ -38,10 +40,12 @@ export class BasketComponent implements OnInit {
 
   increaseCount(item: IStoreItem) {
     item.quantity += 1
+    this.totalCost += item.price
     this.storeService.updateBasketItem(item).subscribe((data) => {})
   }
 
   decreaseCount(item: IStoreItem) {
+    this.totalCost -= item.price
     if (item.quantity === 1) {
       this.basket = this.basket.filter((basketItem) => basketItem.id !== item.id )
       this.storeService.deleteFromBasket(item).subscribe((data) => {})
@@ -52,5 +56,9 @@ export class BasketComponent implements OnInit {
       item.quantity -= 1
       this.storeService.updateBasketItem(item).subscribe((data) => {})
     }
+  }
+
+  countTotalCost(data: IStoreItem[]) {
+    this.totalCost = data.reduce((acc, item:IStoreItem) => acc += item.price * item.quantity, 0)
   }
 }

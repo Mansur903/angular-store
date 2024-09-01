@@ -47,20 +47,20 @@
   ],
   "basket": [
     {
-      "id": "3",
-      "name": "Кроссовки",
-      "image": "images/krossovki.jpg",
-      "price": 3200,
-      "isInCart": true,
-      "quantity": 1
-    },
-    {
       "id": "4",
       "name": "Куртка",
       "image": "images/kurtka.jpg",
       "price": 6000,
       "isInCart": true,
-      "quantity": 1
+      "quantity": 5
+    },
+    {
+      "id": "3",
+      "name": "Кроссовки",
+      "image": "images/krossovki.jpg",
+      "price": 3200,
+      "isInCart": true,
+      "quantity": 3
     }
   ]
 }
