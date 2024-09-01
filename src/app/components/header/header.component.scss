@@ -19,6 +19,10 @@
     flex: 1 1 auto;
   }
 
+  &__title {
+    padding-left: 10px;
+  }
+
   &__title:hover {
     cursor: pointer;
   }

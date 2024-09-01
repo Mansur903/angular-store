@@ -3,11 +3,10 @@ import {HomeComponent} from "./pages/home/home.component";
 import {AboutComponent} from "./pages/about/about.component";
 import {BasketComponent} from "./pages/basket/basket.component";
 import {NotFoundComponent} from "./pages/not-found/not-found.component";
-import {CardsComponent} from "./components/cards/cards.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: CardsComponent, title: 'Home' },
+  { path: 'home', component: HomeComponent, title: 'Home' },
   { path: 'about', component: AboutComponent, title: 'About' },
   { path: 'basket', component: BasketComponent, title: 'Basket' },
   { path: '**', component: NotFoundComponent, title: 'Not found' }

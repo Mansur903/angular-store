@@ -1,7 +1,15 @@
-<p class="total">Общая стоимость товаров: ₽{{totalCost}}</p>
+<div class="top-section">
+  <mat-form-field appearance="outline" class="search" >
+    <mat-label>Search</mat-label>
+    <input matInput [(ngModel)]="inputText" (input)="search()">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <p class="total">Общая стоимость товаров: ₽{{totalCost}}</p>
+</div>
 
 <div class="cards">
-  <mat-card class="card" appearance="outlined" *ngFor="let item of basket">
+  <mat-card class="card" appearance="outlined" *ngFor="let item of filteredItems">
     <mat-card-header class="card__header">
       <mat-card-title class="card__title">{{item.name}}</mat-card-title>
     </mat-card-header>

@@ -13,7 +13,7 @@
       "name": "Часы",
       "image": "images/chasy.jpg",
       "price": 5100,
-      "isInCart": false,
+      "isInCart": true,
       "quantity": 1
     },
     {
@@ -29,30 +29,41 @@
       "name": "Куртка",
       "image": "images/kurtka.jpg",
       "price": 6000,
-      "isInCart": true,
+      "isInCart": false,
       "quantity": 1
     },
     {
       "id": "5",
       "name": "Телефон",
       "image": "images/telefon.jpg",
-      "price": 22000
+      "price": 22000,
+      "isInCart": false,
+      "quantity": 1
     },
     {
       "id": "6",
       "name": "Зонт",
       "image": "",
-      "price": 1400
+      "price": 1400,
+      "isInCart": true
     }
   ],
   "basket": [
     {
-      "id": "4",
-      "name": "Куртка",
-      "image": "images/kurtka.jpg",
-      "price": 6000,
+      "id": "6",
+      "name": "Зонт",
+      "image": "",
+      "price": 1400,
       "isInCart": true,
-      "quantity": 5
+      "quantity": 6
+    },
+    {
+      "id": "2",
+      "name": "Часы",
+      "image": "images/chasy.jpg",
+      "price": 5100,
+      "isInCart": true,
+      "quantity": 1
     },
     {
       "id": "3",
@@ -60,7 +71,7 @@
       "image": "images/krossovki.jpg",
       "price": 3200,
       "isInCart": true,
-      "quantity": 3
+      "quantity": 1
     }
   ]
 }

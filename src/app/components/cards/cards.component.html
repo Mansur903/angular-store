@@ -1,5 +1,11 @@
+<mat-form-field appearance="outline" class="search" >
+  <mat-label>Search</mat-label>
+  <input matInput [(ngModel)]="inputText" (input)="search()">
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
 <div class="cards">
-  <mat-card class="card" appearance="outlined" *ngFor="let item of items">
+  <mat-card class="card" appearance="outlined" *ngFor="let item of filteredItems">
     <mat-card-header class="card__header">
       <mat-card-title class="card__title">{{item.name}}</mat-card-title>
     </mat-card-header>

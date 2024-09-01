@@ -5,13 +5,19 @@ import {Subscription} from "rxjs";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {CommonModule} from "@angular/common";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {FormsModule} from "@angular/forms";
 
 
 @Component({
   selector: 'app-basket',
   standalone: true,
   imports: [
-    MatCardModule, MatButtonModule, CommonModule
+    MatCardModule, MatButtonModule, CommonModule,
+    MatFormFieldModule, MatInputModule, MatIconModule,
+    FormsModule
   ],
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.scss'
@@ -20,13 +26,18 @@ export class BasketComponent implements OnInit {
   basket: IStoreItem[] = []
   basketSubscription: Subscription = new Subscription()
   basketLengthSubscription: Subscription = new Subscription()
+
   totalCost: number = 0
+
+  inputText: string = ''
+  filteredItems: IStoreItem[] = []
 
   constructor(private storeService: StoreService) {}
 
   ngOnInit(): void {
     this.basketSubscription = this.storeService.getBasket().subscribe((data: IStoreItem[]) => {
       this.basket = data
+      this.filteredItems = data
       this.countTotalCost(data)
     })
 
@@ -48,6 +59,7 @@ export class BasketComponent implements OnInit {
     this.totalCost -= item.price
     if (item.quantity === 1) {
       this.basket = this.basket.filter((basketItem) => basketItem.id !== item.id )
+      this.filteredItems = [...this.basket]
       this.storeService.deleteFromBasket(item).subscribe((data) => {})
 
       item.isInCart = false
@@ -60,5 +72,15 @@ export class BasketComponent implements OnInit {
 
   countTotalCost(data: IStoreItem[]) {
     this.totalCost = data.reduce((acc, item:IStoreItem) => acc += item.price * item.quantity, 0)
+  }
+
+  search() {
+    if (!this.inputText) {
+      this.filteredItems = this.basket
+    } else {
+      this.filteredItems = this.basket.filter(item =>
+        item.name.toLowerCase().includes(this.inputText.toLowerCase())
+      );
+    }
   }
 }

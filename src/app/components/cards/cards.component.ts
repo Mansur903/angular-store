@@ -5,12 +5,18 @@ import {IStoreItem} from "../../models/store";
 import {StoreService} from "../../services/store.service";
 import {Subscription} from "rxjs";
 import {CommonModule} from "@angular/common";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-cards',
   standalone: true,
   imports: [
-    MatCardModule, MatButtonModule, CommonModule
+    MatCardModule, MatButtonModule, CommonModule,
+    MatFormFieldModule, MatInputModule, MatIconModule,
+    FormsModule
   ],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss'
@@ -18,16 +24,20 @@ import {CommonModule} from "@angular/common";
 
 export class CardsComponent implements OnInit {
   items: IStoreItem[] = []
+  filteredItems: IStoreItem[] = [];
   itemsSubscription: Subscription = new Subscription()
 
   basket: IStoreItem[] = []
   basketSubscription: Subscription = new Subscription()
+
+  inputText: string = ''
 
   constructor(private storeService: StoreService) {}
 
   ngOnInit(): void {
     this.itemsSubscription = this.storeService.getStore().subscribe((data: IStoreItem[]) => {
       this.items = data
+      this.filteredItems = data;
     })
 
     this.basketSubscription = this.storeService.getBasket().subscribe((data) => {
@@ -55,5 +65,15 @@ export class CardsComponent implements OnInit {
   updateBasket(item: IStoreItem) {
     item.quantity += 1
     this.storeService.updateBasketItem(item).subscribe((data) => {})
+  }
+
+  search() {
+    if (!this.inputText) {
+      this.filteredItems = this.items
+    } else {
+      this.filteredItems = this.items.filter(item =>
+        item.name.toLowerCase().includes(this.inputText.toLowerCase())
+      );
+    }
   }
 }
