@@ -9,8 +9,10 @@
       <span class="spacer"></span>
 
       <div class="header__links">
-        <span class="header__link" routerLink="/about">О магазине</span>
-        <mat-icon class="header__link" routerLink="/basket" (click)="log()">shopping_cart</mat-icon>
+        <span class="header__text" routerLink="/home">Главная</span>
+        <span class="header__text" routerLink="/about">О магазине</span>
+        <mat-icon class="header__link" routerLink="/basket">shopping_cart</mat-icon>
+        <span class="header__basket-icon-badge" *ngIf="basketLength > 0">{{ basketLength }}</span>
       </div>
 
     </div>

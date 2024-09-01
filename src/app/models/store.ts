@@ -3,5 +3,6 @@ export interface IStoreItem {
   name: string,
   image?: string,
   price: number,
-  quantity?: number
+  quantity: number,
+  isInCart?: boolean;
 }

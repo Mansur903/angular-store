@@ -26,11 +26,11 @@ export class CardsComponent implements OnInit {
   constructor(private storeService: StoreService) {}
 
   ngOnInit(): void {
-    this.storeService.getStore().subscribe((data: IStoreItem[]) => {
+    this.itemsSubscription = this.storeService.getStore().subscribe((data: IStoreItem[]) => {
       this.items = data
     })
 
-    this.storeService.getBasket().subscribe((data) => {
+    this.basketSubscription = this.storeService.getBasket().subscribe((data) => {
       this.basket = data
     })
   }
@@ -40,22 +40,20 @@ export class CardsComponent implements OnInit {
     if (this.basketSubscription) this.basketSubscription.unsubscribe()
   }
 
-  // addToBasket(item: IStoreItem) {
-  //   item.quantity = 1
-  //   const foundBasketItem = this.basket.find((basketItem) => basketItem.id === item.id)
-  //   console.log(foundBasketItem)
-  //   if (foundBasketItem) {
-  //     this.updateBasket(item)
-  //   } else {
-  //     this.postBasket(item)
-  //   }
-  // }
-  //
-  // postBasket(item: IStoreItem) {
-  //   this.storeService.addToBasket(item).subscribe((data) => this.basket.push(data))
-  // }
-  //
-  // updateBasket(item: IStoreItem) {
-  //   this.storeService.updateBasketItem(item).subscribe((data) => {})
-  // }
+  addToBasket(item: IStoreItem) {
+    item.isInCart = true
+    this.storeService.updateStoreItem(item).subscribe((data) => {})
+
+    item.quantity = 1
+    this.postBasket(item);
+  }
+
+  postBasket(item: IStoreItem) {
+    this.storeService.addToBasket(item).subscribe((data) => this.basket.push(data))
+  }
+
+  updateBasket(item: IStoreItem) {
+    item.quantity += 1
+    this.storeService.updateBasketItem(item).subscribe((data) => {})
+  }
 }

@@ -6,15 +6,15 @@
     <img class="card__image" mat-card-image [src]="item.image ? item.image : 'images/noimage.jpg'" alt="photo of item">
     <div class="card__content">
       <mat-card-actions class="card__actions">
-        <button mat-button class="card__button" type="button">-</button>
-        <button mat-button class="card__button" type="button">+</button>
+        <button mat-button class="card__button" type="button" (click)="decreaseCount(item)">-</button>
+        <button mat-button class="card__button" type="button" (click)="increaseCount(item)">+</button>
       </mat-card-actions>
     </div>
     <span class="card__price">
-       Общ. стоимость: ₽{{item.price}}
+       Общ. стоимость: ₽{{item.price * item.quantity}}
     </span>
     <span class="card__quantity">
-       Кол-во: 2
+       Кол-во: {{item.quantity}}
     </span>
   </mat-card>
 </div>
