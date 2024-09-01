@@ -22,7 +22,7 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './cards.component.scss'
 })
 
-export class CardsComponent implements OnInit {
+export class CardsComponent {
   items: IStoreItem[] = []
   filteredItems: IStoreItem[] = [];
   itemsSubscription: Subscription = new Subscription()

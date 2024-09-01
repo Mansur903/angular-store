@@ -25,3 +25,13 @@
 .search {
   margin: 40px 10px 0px;
 }
+
+@media (max-width: 470px) {
+  .card {
+    width: 100%;
+  }
+
+  .search {
+    width: 90%;
+  }
+}

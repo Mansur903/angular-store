@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Имя</mat-label>
+    <input id="name" required matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input id="email" required matInput formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Сообщение</mat-label>
+    <textarea id="message" required matInput formControlName="message"></textarea>
+  </mat-form-field>
+
+  <button mat-flat-button [disabled]="!form.valid || buttonDisabled">{{buttonText}}</button>
+</form>

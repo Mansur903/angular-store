@@ -1,0 +1,14 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+
+  .not-found__title {
+    margin: 10px;
+  }
+
+  .not-found__subtitle {
+    margin-bottom: 60px;
+  }
+}

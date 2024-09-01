@@ -4,6 +4,7 @@ import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 import {StoreService} from "../../services/store.service";
 import {CommonModule} from "@angular/common";
+import {MatBadgeModule} from '@angular/material/badge';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ import {CommonModule} from "@angular/common";
   imports: [
     MatToolbarModule,
     MatIcon,
-    RouterLink, CommonModule
+    RouterLink, CommonModule,
+    MatBadgeModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

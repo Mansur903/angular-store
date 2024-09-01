@@ -11,8 +11,9 @@
       <div class="header__links">
         <span class="header__text" routerLink="/home">Главная</span>
         <span class="header__text" routerLink="/about">О магазине</span>
-        <mat-icon class="header__link" routerLink="/basket">shopping_cart</mat-icon>
-        <span class="header__basket-icon-badge" *ngIf="basketLength">{{ basketLength }}</span>
+        <mat-icon class="header__link" routerLink="/basket" [matBadge]="basketLength" [matBadgeHidden]="!basketLength" matBadgeColor="accent">
+          shopping_cart
+        </mat-icon>
       </div>
 
     </div>

@@ -1,6 +1,12 @@
-.content-wrapper {
+.page-wrapper {
   display: flex;
-  align-items: center;
-  margin: 0 auto;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  width: 100%;
   max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
 }

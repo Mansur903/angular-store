@@ -22,7 +22,7 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.scss'
 })
-export class BasketComponent implements OnInit {
+export class BasketComponent {
   basket: IStoreItem[] = []
   basketSubscription: Subscription = new Subscription()
   basketLengthSubscription: Subscription = new Subscription()

@@ -13,7 +13,7 @@
       "name": "Часы",
       "image": "images/chasy.jpg",
       "price": 5100,
-      "isInCart": true,
+      "isInCart": false,
       "quantity": 1
     },
     {
@@ -45,31 +45,24 @@
       "name": "Зонт",
       "image": "",
       "price": 1400,
-      "isInCart": true
+      "isInCart": true,
+      "quantity": 1
     }
   ],
   "basket": [
-    {
-      "id": "6",
-      "name": "Зонт",
-      "image": "",
-      "price": 1400,
-      "isInCart": true,
-      "quantity": 6
-    },
-    {
-      "id": "2",
-      "name": "Часы",
-      "image": "images/chasy.jpg",
-      "price": 5100,
-      "isInCart": true,
-      "quantity": 1
-    },
     {
       "id": "3",
       "name": "Кроссовки",
       "image": "images/krossovki.jpg",
       "price": 3200,
+      "isInCart": true,
+      "quantity": 4
+    },
+    {
+      "id": "6",
+      "name": "Зонт",
+      "image": "",
+      "price": 1400,
       "isInCart": true,
       "quantity": 1
     }

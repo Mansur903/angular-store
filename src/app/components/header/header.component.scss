@@ -38,21 +38,12 @@
 
   &__link {
     cursor: pointer;
-    padding: 0 14px;
+    padding: 0 5px 0 14px;
   }
+}
 
-  &__basket-icon-badge {
-    position: absolute;
-    top: -7px;
-    right: 3px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    width: 17px;
-    height: 17px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 470px) {
+  .header__content-wrapper {
+    flex-direction: column;
   }
 }
